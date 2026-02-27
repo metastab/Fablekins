@@ -38,6 +38,7 @@ Core components:
 - **Sprite** – Rendering abstraction
 - **OverworldMap** – Map layers and object placement
 - **DirectionInput** – Input handling system
+- **LevelManager** - Level management and level up system
 
 ---
 
