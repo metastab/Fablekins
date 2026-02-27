@@ -72,13 +72,7 @@ class Overworld {
     this.map = new OverworldMap(window.OverworldMaps.NorthStreet);
     //console.log(this.map.walls);
 
-    // Removing the touch controls for pc players
-    //console.log(window.matchMedia("(any-hover: hover)").matches);
-    //console.log(window.matchMedia("(any-pointer: fine)").matches);
-
-    if (window.matchMedia("(any-pointer: fine)").matches) {
-      document.querySelector(".touch-controls").style.display = "none";
-    }
+    // Touch controls are toggled via CSS media query (see styles.css)
 
     this.DirectionInput = new DirectionInput();
     this.DirectionInput.init();

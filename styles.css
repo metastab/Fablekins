@@ -33,10 +33,18 @@ body {
   left: 50%;
   transform: translateX(-50%);
 
-  display: grid;
+  display: none;
+  /* hidden by default on large screens */
   grid-template-columns: 180px 180px 180px;
   grid-template-rows: 180px 180px 180px;
   gap: 6px;
+}
+
+/* Show touch controls on any screen smaller than a standard laptop */
+@media (max-width: 1279px) {
+  .touch-controls {
+    display: grid;
+  }
 }
 
 
@@ -78,6 +86,13 @@ body {
   outline: 1px solid #fff;
 
   transform: scale(3);
+}
+
+/* Scale down on small screens (phones, tablets, small Android devices) */
+@media (max-width: 1279px) {
+  .game-container {
+    transform: scale(2.5);
+  }
 }
 
 .game-container canvas {
