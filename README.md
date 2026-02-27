@@ -1,4 +1,4 @@
-# Fablekins
+![Fablekins Logo](./images/fablekins_logo.png)
 
 A lightweight 2D tile-based game engine built entirely in vanilla JavaScript using HTML5 Canvas.
 
