@@ -7,32 +7,9 @@ class Overworld {
   }
 
 
-  drawHUD() {
-    this.ctx.save();
-
-    this.ctx.fillStyle = "red";
-    this.ctx.font = "12px monospace";
-    this.ctx.textAlign = "right";
-
-    this.ctx.fillText(
-      `${this.map.dotsCollected} / ${this.map.totalDots}`,
-      this.canvas.width - 8,
-      14
-    );
-
-    if (this.map.dotsCollected === this.map.totalDots) {
-      this.ctx.fillStyle = "lime";
-      this.ctx.font = "20px monospace";
-      this.ctx.textAlign = "center";
-
-      this.ctx.fillText(
-        "YOU WON!",
-        this.canvas.width / 2,
-        this.canvas.height / 2
-      );
-    }
-
-    this.ctx.restore();
+  drawHUD(deltaTime) {
+    // Draw level indicator (top-left badge + level-up flash)
+    this.map.levelManager.drawLevelIndicator(this.ctx, deltaTime);
   }
 
 
@@ -78,7 +55,7 @@ class Overworld {
       // Draw upper map
       this.map.drawUpperImg(this.ctx, CameraPerson);
 
-      this.drawHUD();
+      this.drawHUD(deltaTime);
 
 
       requestAnimationFrame(step);
@@ -108,7 +85,6 @@ class Overworld {
     this.startGameLoop();
 
     this.map.spawnDot();
-    updateDotCounter(0, this.map.totalDots);
 
 
 

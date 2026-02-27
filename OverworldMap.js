@@ -16,6 +16,13 @@ class OverworldMap {
     this.activeDot = null;
     this.ghostActivated = false;
 
+    // LEVEL SYSTEM
+    this.levelManager = new LevelManager({
+      dotsPerLevel: 5,
+      baseGhostSpeed: 75,
+      speedIncrement: 18,
+    });
+
   }
 
   drawLowerImg(ctx, CameraPerson) {
@@ -88,18 +95,10 @@ class OverworldMap {
 
     this.dotsCollected++;
 
-    updateDotCounter(this.dotsCollected, this.totalDots);
+    // Notify level manager (triggers level-up & speed boost every 5 dots)
+    this.levelManager.onDotEaten(this);
 
-    if (this.dotsCollected === this.totalDots) {
-      delete this.gameObjects.ghost;
-      showWinMessage();
-      setTimeout(() => {
-        location.reload();
-      }, 3000)
-
-    } else {
-      this.spawnDot();
-    }
+    this.spawnDot();
   }
 
   playerDied() {
