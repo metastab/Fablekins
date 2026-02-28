@@ -31,8 +31,8 @@ class InstructionsScreen {
         const lines = [
             "👻  Avoid the ghost",
             "🔴  Collect dots to level up",
-            "⚡  Golden dot = speed boost",
-            "↑↓←→  Move with arrow keys",
+            "⚡  Golden dot = speed boost, nerf ghost",
+            "←↑↓→  Move with arrow keys",
         ];
         c.font = "10px 'Courier New'";
         c.fillStyle = "#b39ddb";
