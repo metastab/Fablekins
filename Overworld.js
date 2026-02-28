@@ -70,16 +70,20 @@ class Overworld {
   init() {
 
     this.map = new OverworldMap(window.OverworldMaps.NorthStreet);
-    //console.log(this.map.walls);
 
-    // Touch controls are toggled via CSS media query (see styles.css)
-
-    this.DirectionInput = new DirectionInput();
-    this.DirectionInput.init();
-    this.startGameLoop();
-
-    this.map.spawnDot();
-
+    // Show pixel-art instructions screen; game starts only after Proceed
+    const instructions = new InstructionsScreen({
+      canvas: this.canvas,
+      ctx: this.ctx,
+      onProceed: () => {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        this.DirectionInput = new DirectionInput();
+        this.DirectionInput.init();
+        this.startGameLoop();
+        this.map.spawnDot();
+      },
+    });
+    instructions.draw();
 
 
     //---------------------------[OLD CODE -> HARDCODED]--------------------------------------//

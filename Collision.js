@@ -1070,5 +1070,76 @@ const Colliders = {
         [Utilities.asGridCords(21, 38)]: true,
         [Utilities.asGridCords(22, 38)]: true,
 
+
+        //Cover fixes
+
+        //bottom tree
+
+        [Utilities.asGridCords(11, 34)]: true,
+        [Utilities.asGridCords(12, 33)]: true,
+        [Utilities.asGridCords(13, 33)]: true,
+
+        [Utilities.asGridCords(12, 34)]: true,
+        [Utilities.asGridCords(13, 34)]: true,
+        [Utilities.asGridCords(14, 34)]: true,
+
+        [Utilities.asGridCords(12, 35)]: true,
+        [Utilities.asGridCords(13, 35)]: true,
+        [Utilities.asGridCords(14, 35)]: true,
+
+        [Utilities.asGridCords(12, 36)]: true,
+        [Utilities.asGridCords(13, 36)]: true,
+        [Utilities.asGridCords(14, 36)]: true,
+
+        //top tree
+        [Utilities.asGridCords(7, 12)]: true,
+        [Utilities.asGridCords(8, 12)]: true,
+        [Utilities.asGridCords(9, 12)]: true,
+        [Utilities.asGridCords(10, 12)]: true,
+        [Utilities.asGridCords(11, 12)]: true,
+        [Utilities.asGridCords(12, 12)]: true,
+
+        [Utilities.asGridCords(7, 11)]: true,
+        [Utilities.asGridCords(8, 11)]: true,
+        [Utilities.asGridCords(9, 11)]: true,
+        [Utilities.asGridCords(10, 11)]: true,
+        [Utilities.asGridCords(11, 11)]: true,
+        [Utilities.asGridCords(12, 11)]: true,
+
+        [Utilities.asGridCords(7, 10)]: true,
+        [Utilities.asGridCords(8, 10)]: true,
+        [Utilities.asGridCords(9, 10)]: true,
+        [Utilities.asGridCords(10, 10)]: true,
+        [Utilities.asGridCords(11, 10)]: true,
+        [Utilities.asGridCords(12, 10)]: true,
+
+        [Utilities.asGridCords(7, 9)]: true,
+        [Utilities.asGridCords(8, 9)]: true,
+        [Utilities.asGridCords(9, 9)]: true,
+        [Utilities.asGridCords(10, 9)]: true,
+        [Utilities.asGridCords(11, 9)]: true,
+        [Utilities.asGridCords(12, 9)]: true,
+
+        [Utilities.asGridCords(7, 8)]: true,
+        [Utilities.asGridCords(8, 8)]: true,
+        [Utilities.asGridCords(9, 8)]: true,
+        [Utilities.asGridCords(10, 8)]: true,
+        [Utilities.asGridCords(11, 8)]: true,
+        [Utilities.asGridCords(12, 8)]: true,
+
+        [Utilities.asGridCords(7, 7)]: true,
+        [Utilities.asGridCords(8, 7)]: true,
+        [Utilities.asGridCords(9, 7)]: true,
+        [Utilities.asGridCords(10, 7)]: true,
+        [Utilities.asGridCords(11, 7)]: true,
+        [Utilities.asGridCords(12, 7)]: true,
+
+        //cat
+        [Utilities.asGridCords(7, 13)]: true,
+        [Utilities.asGridCords(7, 14)]: true,
+        [Utilities.asGridCords(7, 15)]: true,
+        [Utilities.asGridCords(7, 16)]: true,
+
+
     }
 }

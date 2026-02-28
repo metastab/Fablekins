@@ -104,3 +104,10 @@ body {
 .game-container canvas {
   image-rendering: pixelated;
 }
+
+/* Increase canvas height on Android / small-screen phones */
+@media (max-width: 1100px) {
+  .game-container canvas {
+    height: 280px;
+  }
+}

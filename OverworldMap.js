@@ -11,8 +11,6 @@ class OverworldMap {
     this.upperImage.src = config.uppersrc;
 
     // DOT SYSTEM
-    this.totalDots = 10;
-    this.dotsCollected = 0;
     this.activeDot = null;
     this.activePowerDot = null;
     this.ghostActivated = false;
@@ -62,8 +60,6 @@ class OverworldMap {
 
   // SPAWING MY LITTLE DOTS
   spawnDot() {
-    if (this.dotsCollected >= this.totalDots) return;
-
     const x = Utilities.withGrid(
       Math.floor(Math.random() * 37) + 5
     );
@@ -93,8 +89,6 @@ class OverworldMap {
   removeDot(dot) {
     delete this.gameObjects.dot;
     this.activeDot = null;
-
-    this.dotsCollected++;
 
     // Notify level manager (triggers level-up & speed boost every 5 dots)
     this.levelManager.onDotEaten(this);
