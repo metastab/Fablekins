@@ -14,6 +14,7 @@ class OverworldMap {
     this.totalDots = 10;
     this.dotsCollected = 0;
     this.activeDot = null;
+    this.activePowerDot = null;
     this.ghostActivated = false;
 
     // LEVEL SYSTEM
@@ -98,7 +99,34 @@ class OverworldMap {
     // Notify level manager (triggers level-up & speed boost every 5 dots)
     this.levelManager.onDotEaten(this);
 
+    // Random chance (25%) to spawn a power dot after eating a dot
+    if (!this.activePowerDot && Math.random() < 0.4) {
+      this.spawnPowerDot();
+    }
+
     this.spawnDot();
+  }
+
+  // POWER DOT – SPAWNING
+  spawnPowerDot() {
+    let x, y;
+    let attempts = 0;
+    do {
+      x = Utilities.withGrid(Math.floor(Math.random() * 37) + 5);
+      y = Utilities.withGrid(Math.floor(Math.random() * 32) + 5);
+      attempts++;
+    } while (this.walls[`${x}, ${y}`] && attempts < 20);
+
+    this.activePowerDot = new PowerDot({ x, y });
+    this.gameObjects.powerDot = this.activePowerDot;
+    console.log(`⚡ PowerDot spawned at ${x / 16}, ${y / 16}`);
+  }
+
+  // POWER DOT – CONSUMED
+  removePowerDot(dot) {
+    delete this.gameObjects.powerDot;
+    this.activePowerDot = null;
+    console.log("⚡ Power-Up collected!");
   }
 
   playerDied() {
