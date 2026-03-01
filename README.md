@@ -1,6 +1,8 @@
 ![Fablekins Logo](./images/fablekins_logo.png)
 
-![version](https://img.shields.io/badge/version-beta_0.8-blue)
+![version](https://img.shields.io/badge/version-26.01.03-blue)
+
+itch.io: [fablekins](https://metastab.itch.io/fablekins)
 
 A lightweight 2D tile-based game engine built entirely in vanilla JavaScript using HTML5 Canvas.
 
